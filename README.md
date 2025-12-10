@@ -107,8 +107,8 @@ streamlit run app.py
 
 ## 📂 Cấu trúc dự án
 ```plaintext
-ai-meeting-assistant/
-├── app.py                  # Streamlit UI và điều phối logic chính
+./
+├── openai_app.py                  # Streamlit UI và điều phối logic chính
 ├── requirements.txt        # Danh sách thư viện Python
 ├── core/
 │   ├── vad.py              # Voice Activity Detection (Phát hiện giọng nói)
