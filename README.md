@@ -57,7 +57,7 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-## 3. Cài đặt thư viện
+### 3. Cài đặt thư viện
 ``` cmd
 pip install -r requirements.txt
 ```
