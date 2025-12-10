@@ -10,7 +10,7 @@ class OpenAIASRService:
         """
         self.client = OpenAI(api_key=api_key)
         self.sample_rate = 16000 # Sample rate chuẩn của luồng xử lý
-        print("✅ OpenAI Whisper ASR Service đã sẵn sàng!")
+        print("OpenAI Whisper ASR Service đã sẵn sàng!")
 
     def predict(self, audio_data):
         """
@@ -53,7 +53,7 @@ class OpenAIASRService:
             }
 
         except Exception as e:
-            print(f"❌ OpenAI API Error: {e}")
+            print(f"OpenAI API Error: {e}")
             return {
                 "text": "",
                 "confidence": 0.0,

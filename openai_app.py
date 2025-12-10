@@ -28,13 +28,13 @@ st.title("🎙️ AI Meeting Assistant (All-in-One)")
 if "OPENAI_API_KEY" in st.secrets:
     API_KEY = st.secrets["OPENAI_API_KEY"]
 else:
-    st.error("🚨 Chưa tìm thấy OPENAI_API_KEY trong .streamlit/secrets.toml")
+    st.error("Chưa tìm thấy OPENAI_API_KEY trong .streamlit/secrets.toml")
     st.stop()
 
 if "HF_TOKEN" in st.secrets:
     HF_TOKEN = st.secrets["HF_TOKEN"]
 else:
-    st.warning("⚠️ Chưa tìm thấy HF_TOKEN. Chức năng phân biệt người nói sẽ bị tắt.")
+    st.warning("Chưa tìm thấy HF_TOKEN. Chức năng phân biệt người nói sẽ bị tắt.")
     HF_TOKEN = None
 
 # Tạo Session ID cho ChromaDB collection (để không bị lẫn giữa các lần chạy)
@@ -95,7 +95,7 @@ def load_core_services():
         models = _get_core_services_cached(st.session_state.session_id)
         
     # UI Element 2: Toast
-    st.toast("✅ Hệ thống đã sẵn sàng!", icon="🚀")
+    st.toast("Hệ thống đã sẵn sàng!", icon="🚀")
     
     return models
 
@@ -281,7 +281,7 @@ with tab2:
     
     if audio_file:
         st.audio(audio_file)
-        if st.button("🚀 Bắt đầu xử lý File"):
+        if st.button("Bắt đầu xử lý File"):
             # Clear data cũ trước khi chạy file mới
             clear_session()
             
@@ -323,7 +323,7 @@ with tab2:
             if flush:
                 add_to_transcript(flush['punctuated_text'], "End")
                 
-            st.success("✅ Đã xử lý xong file!")
+            st.success("Đã xử lý xong file!")
             with chat_box:
                 st.markdown(st.session_state.transcript_history, unsafe_allow_html=True)
 
@@ -373,5 +373,5 @@ with col_btn2:
 
 if "final_minutes" in st.session_state and st.session_state.final_minutes:
     st.markdown("---")
-    st.markdown("### 📋 KẾT QUẢ BIÊN BẢN")
+    st.markdown("### KẾT QUẢ BIÊN BẢN")
     st.markdown(st.session_state.final_minutes)

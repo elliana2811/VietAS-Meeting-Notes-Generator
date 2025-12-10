@@ -1,13 +1,10 @@
 import logging
 from typing import Dict, Optional, Any
-
-# Cố gắng import fastpunct, nếu chưa cài thì cảnh báo
 try:
     from fastpunct import FastPunct
 except ImportError:
     FastPunct = None
 
-# --- CẤU HÌNH LOGGING ---
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("Punctuation")
 
@@ -26,16 +23,16 @@ class PunctuationRestorer:
             device: 'cuda' hoặc 'cpu'
         """
         if FastPunct is None:
-            logger.error("❌ Thư viện 'fastpunct' chưa được cài đặt. Hãy chạy: pip install fastpunct")
+            logger.error("Thư viện 'fastpunct' chưa được cài đặt. Hãy chạy: pip install fastpunct")
             self.model = None
         else:
             logger.info("⏳ Đang tải model Punctuation Restoration...")
             try:
                 # FastPunct tự động tải weights nếu chưa có
                 self.model = FastPunct()
-                logger.info("✅ Punctuation Model Loaded!")
+                logger.info("Punctuation Model Loaded!")
             except Exception as e:
-                logger.error(f"❌ Lỗi tải FastPunct: {e}")
+                logger.error(f"Lỗi tải FastPunct: {e}")
                 self.model = None
 
         # 1. Internal text buffer

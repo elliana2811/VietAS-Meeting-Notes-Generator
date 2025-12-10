@@ -29,7 +29,7 @@ class PDFKnowledgeBase:
         """
         Đọc từng trang PDF và lưu vào Vector DB.
         """
-        print(f"📄 Đang xử lý PDF: {pdf_path}")
+        print(f"Đang xử lý PDF: {pdf_path}")
         
         # Dùng pdfplumber để trích xuất text tốt hơn
         with pdfplumber.open(pdf_path) as pdf:
@@ -68,15 +68,15 @@ class PDFKnowledgeBase:
             
             # 3. Lưu Batch vào ChromaDB
             if documents:
-                print(f"💾 Đang lưu {len(documents)} trang vào Vector DB...")
+                print(f"Đang lưu {len(documents)} trang vào Vector DB...")
                 self.collection.upsert(
                     documents=documents,
                     metadatas=metadatas,
                     ids=ids
                 )
-                print("✅ Đã lưu xong PDF.")
+                print("Đã lưu xong PDF.")
             else:
-                print("⚠️ PDF không có text trích xuất được.")
+                print("PDF không có text trích xuất được.")
 
     def find_relevant_pages(self, transcript_chunk, n_results=2):
         """

@@ -27,10 +27,10 @@ class OfflineDiarizer:
                 raise ValueError("Không thể load pipeline (None).")
             
             self.pipeline.to(self.device)
-            logger.info("✅ Diarization Pipeline loaded successfully!")
+            logger.info("Diarization Pipeline loaded successfully!")
             
         except Exception as e:
-            logger.error(f"❌ Failed to load Pyannote Pipeline: {str(e)}")
+            logger.error(f"Failed to load Pyannote Pipeline: {str(e)}")
             raise e
 
     def process_file(self, audio_path: str) -> dict:
@@ -71,7 +71,6 @@ class OfflineDiarizer:
             else:
                 logger.error(f"⚠️ Unknown output type: {type(result_obj)}")
                 return {"speaker_segments": [], "error": f"Unknown output format: {type(result_obj)}"}
-            # --------------------------------------
 
             # 3. Trích xuất Segment
             speaker_segments = []

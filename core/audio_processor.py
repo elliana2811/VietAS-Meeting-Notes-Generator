@@ -84,7 +84,7 @@ class RealTimeAudioProcessor(AudioProcessorBase):
         
         except Exception as e:
             if self.frame_count % 50 == 0:
-                print(f"❌ Error: {e}")
+                print(f"Error: {e}")
                 # traceback.print_exc()
             
         return frame
@@ -93,7 +93,7 @@ class RealTimeAudioProcessor(AudioProcessorBase):
         if len(self.buffer) > 8000:
             segment = self.buffer.copy()
             self.output_queue.put(segment)
-            print(f"✂️ CẮT AUDIO ({len(segment)/16000:.2f}s)")
+            print(f"CẮT AUDIO ({len(segment)/16000:.2f}s)")
         
         self.buffer = np.array([], dtype=np.float32)
         self.is_speaking = False
