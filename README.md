@@ -53,13 +53,12 @@ python -m venv venv
 source venv/bin/activate
 
 3. Cài đặt thư viện
-code
-Bash
 pip install -r requirements.txt
+
 Lưu ý: Nếu dùng Windows và gặp lỗi thư viện âm thanh, hãy cài thêm FFmpeg qua Conda:
-code
-Bash
+
 conda install -c conda-forge ffmpeg
+
 🔑 Cấu hình API Keys
 Ứng dụng yêu cầu tạo file cấu hình bí mật để chứa API Key. Hãy tạo file theo đường dẫn sau:
 File: .streamlit/secrets.toml
@@ -85,7 +84,7 @@ Sau khi cài đặt xong, chạy lệnh sau để khởi động:
 streamlit run app.py
 
 📂 Cấu trúc dự án
-
+```plaintext
 ai-meeting-assistant/
 ├── app.py                  # Streamlit UI và điều phối logic chính
 ├── requirements.txt        # Danh sách thư viện Python
@@ -100,3 +99,4 @@ ai-meeting-assistant/
 ├── storage/                # Thư mục lưu dữ liệu Vector DB (Chroma)
 └── .streamlit/
     └── secrets.toml        # API Keys (Không commit file này lên Git)
+```
