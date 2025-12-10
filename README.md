@@ -71,6 +71,7 @@ OPENAI_API_KEY = "sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # 2. HuggingFace Token (không bắt buộc nếu không dùng diarization)
 HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
 ⚠️ Lưu ý quan trọng về HuggingFace Token
 Để dùng tính năng phân biệt người nói (pyannote), bạn cần:
 Tạo HuggingFace Token (chọn quyền READ).
@@ -78,14 +79,13 @@ Truy cập các đường link sau và nhấn Accept License (Đồng ý điều
 pyannote/segmentation-3.0
 pyannote/speaker-diarization-3.1
 pyannote/speaker-diarization-community-1
+
 ▶️ Chạy ứng dụng
 Sau khi cài đặt xong, chạy lệnh sau để khởi động:
-code
-Bash
 streamlit run app.py
+
 📂 Cấu trúc dự án
-code
-Text
+
 ai-meeting-assistant/
 ├── app.py                  # Streamlit UI và điều phối logic chính
 ├── requirements.txt        # Danh sách thư viện Python
