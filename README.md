@@ -39,49 +39,63 @@ Theo dõi toàn bộ log xử lý qua Terminal để kiểm soát luồng dữ l
 
 ### 1. Clone repository
 
-git clone https://github.com/your-username/ai-meeting-assistant.git
-cd ai-meeting-assistant
-2. Tạo môi trường ảo
-code
-Bash
+git clone https://github.com/elliana2811/VietAS-Meeting-Notes-Generator.git
+
+### 2. Tạo môi trường ảo
+``` cmd
 python -m venv venv
+```
 
-# Windows
+#### Windows
+``` cmd
 .\venv\Scripts\activate
+```
 
-# macOS/Linux
+#### macOS/Linux
+``` cmd
 source venv/bin/activate
+```
 
-3. Cài đặt thư viện
+## 3. Cài đặt thư viện
+``` cmd
 pip install -r requirements.txt
-
+```
 Lưu ý: Nếu dùng Windows và gặp lỗi thư viện âm thanh, hãy cài thêm FFmpeg qua Conda:
 
+``` cmd
 conda install -c conda-forge ffmpeg
+```
 
-🔑 Cấu hình API Keys
-Ứng dụng yêu cầu tạo file cấu hình bí mật để chứa API Key. Hãy tạo file theo đường dẫn sau:
-File: .streamlit/secrets.toml
-Nội dung mẫu:
-code
-Toml
-# 1. OpenAI Key (bắt buộc) cho Whisper + GPT
+## 🔑 Cấu hình API Keys
+
+Ứng dụng sử dụng cơ chế bảo mật `secrets` của Streamlit. Bạn cần tạo file cấu hình như sau:
+
+1. Tạo thư mục `.streamlit` ở thư mục gốc dự án.
+2. Tạo file `.streamlit/secrets.toml.`
+3. Điền nội dung sau:
+
+### 1. OpenAI Key (bắt buộc) cho Whisper + GPT
 OPENAI_API_KEY = "sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-# 2. HuggingFace Token (không bắt buộc nếu không dùng diarization)
+### 2. HuggingFace Token (không bắt buộc nếu không dùng diarization)
 HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 ⚠️ Lưu ý quan trọng về HuggingFace Token
+
 Để dùng tính năng phân biệt người nói (pyannote), bạn cần:
-Tạo HuggingFace Token (chọn quyền READ).
-Truy cập các đường link sau và nhấn Accept License (Đồng ý điều khoản):
-pyannote/segmentation-3.0
-pyannote/speaker-diarization-3.1
-pyannote/speaker-diarization-community-1
+
+1. Tạo HuggingFace Token (chọn quyền READ).
+2. Truy cập các đường link sau và nhấn Accept License (Đồng ý điều khoản):
+[pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0)
+[pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
+[pyannote/speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1)
 
 ▶️ Chạy ứng dụng
+
 Sau khi cài đặt xong, chạy lệnh sau để khởi động:
+```cmd
 streamlit run app.py
+```
 
 📂 Cấu trúc dự án
 ```plaintext
