@@ -6,4 +6,5 @@ __pycache__/
 *.pyc
 .env
 venv/
-anaconda3/
+storage/
+av-10.0.0-cp39-cp39-linux_armv6l.whl
