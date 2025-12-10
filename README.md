@@ -38,8 +38,9 @@ Theo dõi toàn bộ log xử lý qua Terminal để kiểm soát luồng dữ l
 - FFmpeg đã được cài đặt sẵn và thêm vào PATH.
 
 ### 1. Clone repository
-
+```cmd
 git clone https://github.com/elliana2811/VietAS-Meeting-Notes-Generator.git
+```
 
 ### 2. Tạo môi trường ảo
 ``` cmd
@@ -75,29 +76,36 @@ conda install -c conda-forge ffmpeg
 3. Điền nội dung sau:
 
 ### 1. OpenAI Key (bắt buộc) cho Whisper + GPT
+```
 OPENAI_API_KEY = "sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
 
 ### 2. HuggingFace Token (không bắt buộc nếu không dùng diarization)
+```
 HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
 
-⚠️ Lưu ý quan trọng về HuggingFace Token
+### ⚠️ Lưu ý quan trọng về HuggingFace Token
 
 Để dùng tính năng phân biệt người nói (pyannote), bạn cần:
 
 1. Tạo HuggingFace Token (chọn quyền READ).
 2. Truy cập các đường link sau và nhấn Accept License (Đồng ý điều khoản):
+   
 [pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0)
+
 [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
+
 [pyannote/speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1)
 
-▶️ Chạy ứng dụng
+## ▶️ Chạy ứng dụng
 
 Sau khi cài đặt xong, chạy lệnh sau để khởi động:
 ```cmd
 streamlit run app.py
 ```
 
-📂 Cấu trúc dự án
+## 📂 Cấu trúc dự án
 ```plaintext
 ai-meeting-assistant/
 ├── app.py                  # Streamlit UI và điều phối logic chính
